@@ -1,0 +1,8 @@
+.venv
+.env
+__pycache__
+env.ps1
+output
+GOOGLE_SERVICE_ACCOUNT_FILE.json
+.DS_Store
+env.sh
