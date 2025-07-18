@@ -53,7 +53,7 @@ schedule.every().day.at("03:00").do(process_adresses_update)
 logging.info("Lancement initial du programme")
 logging.info("")
 # Première exécution immédiate
-process_adresses_update()
+process_adresses_update(force_full_reload=True)
 while True:
     schedule.run_pending()
     time.sleep(1)
