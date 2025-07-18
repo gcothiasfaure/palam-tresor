@@ -49,7 +49,7 @@ def get_adress_with_siret(siret):
         logging.info("Tentative de récupération de l'adresse du SIRET "+ siret)
         url = f"https://recherche-entreprises.api.gouv.fr/search?q={siret}&page=1&per_page=1"
         response = requests.request("GET", url)
-        
+
         results = response.json()['results']
         if response.status_code != 200 or not results or len(results) == 0:
             return None
@@ -116,6 +116,7 @@ def fetch_sheet_data_and_get_adresses(service,full_reload):
             spreadsheetId=PALAM_TRESOR_GOOGLE_SHEET_ID,
             range=GOOGLE_SHEET_NAME
         ).execute()
+        
         raw_data = result.get('values', [])
         siret_array = []
         for row in raw_data[1:]:
