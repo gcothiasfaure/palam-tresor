@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  palam-tresor:
+    image: gaspardcothiasfaure/palam-tresor:0.1
+    container_name: palam-tresor
+    restart: always
+    env_file: .env
+    volumes:
+      - "/home/debian/palam-tresor/output:/app/output"
+      - "/home/debian/palam-tresor/GOOGLE_SERVICE_ACCOUNT_FILE.json:/app/source-code/GOOGLE_SERVICE_ACCOUNT_FILE.json"
